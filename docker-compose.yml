@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+  postgres:
+    container_name: "event_management"
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DV: event_management
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+volumes:
+   data:
